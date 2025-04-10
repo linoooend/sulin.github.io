@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>联系我们 - 筱荷科技</title>
+    <style>
+        /* 全局样式（与主页保持一致） */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
+        }
+        body {
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* 导航栏 */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #0066cc;
+        }
+        .logo span {
+            color: #333;
+        }
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        .nav-links li {
+            margin-left: 30px;
+        }
+        .nav-links a {
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: #0066cc;
+        }
+        
+        /* 联系页专属样式 */
+        .contact-hero {
+            background: linear-gradient(135deg, #0066cc, #00aaff);
+            color: white;
+            padding: 150px 0 80px;
+            text-align: center;
+        }
+        .contact-hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+        
+        /* 联系内容区 */
+        .contact-section {
+            padding: 80px 0;
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        /* 联系信息卡片 */
+        .contact-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .contact-card:hover {
+            transform: translateY(-10px);
+        }
+        .contact-icon {
+            font-size: 50px;
+            color: #0066cc;
+            margin-bottom: 20px;
+        }
+        .contact-card h3 {
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+        .contact-card p {
+            margin-bottom: 10px;
+        }
+        .contact-card a {
+            color: #0066cc;
+            font-weight: 500;
+        }
+        
+        /* 联系表单 */
+        .contact-form {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border 0.3s;
+        }
+        .form-control:focus {
+            border-color: #0066cc;
+            outline: none;
+        }
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        .submit-btn {
+            background: #0066cc;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .submit-btn:hover {
+            background: #0055aa;
+        }
+        
+        /* 地图 */
+        .map-container {
+            height: 400px;
+            margin: 60px 0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .contact-hero h1 { font-size: 32px; }
+            .nav-links { display: none; }
+            .contact-grid { grid-template-columns: 1fr; }
+            .contact-form { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header>
+        <div class="container">
+            <nav>
+                筱荷<span>科技</span>
+                <ul class="nav-links">
+                     <li><a href="首页.html">首页</a> <!--点击跳转到新页面--></li>  
+		      <li><a href="关于我们.html">关于我们</a> <!--点击跳转到新页面--></li>
+                    <li><a href="核心团队.html">核心团队</a> <!--点击跳转到新页面--></li>
+                    <li><a href="产品服务.html">产品服务</a> <!--点击跳转到新页面--></li>
+                    <li><a href="联系我们.html">联系我们</a> <!--点击跳转到新页面--></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 联系页头部 -->
+    <div class="contact-hero">
+        <div class="container">
+            <h1>联系我们</h1>
+            <p>无论您有任何问题或合作意向，我们都期待听到您的声音</p >
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- 联系信息 -->
+        <section class="contact-section">
+            <div class="contact-grid">
+                <!-- 联系方式1 -->
+                <div class="contact-card">
+                    <div class="contact-icon">📞</div>
+                    <h3>电话咨询</h3>
+                    <p>周一至周五 9:00-18:00</p >
+                    <p>155-2814-1315</p >
+                </div>
+                
+                <!-- 联系方式2 -->
+                <div class="contact-card">
+                    <div class="contact-icon">✉️</div>
+                    <h3>电子邮件</h3>
+                    <p>商务合作: 3127567685@.com</p >
+                    <p>技术支持: 2959220029@.com</p >
+                </div>
+                
+                <!-- 联系方式3 -->
+                <div class="contact-card">
+                    <div class="contact-icon">🏢</div>
+                    <h3>办公地址</h3>
+                    <p>成都市金堂县白果街道瑞江路111号</p >
+                    <p>筱荷科技大厦 3-5层</p >
+                </div>
+            </div>
+        </section>
+
+        <!-- 联系表单 -->
+        <section class="contact-section">
+            <h2 style="text-align: center; margin-bottom: 30px; font-size: 32px; color: #0066cc;">发送消息给我们</h2>
+            <div class="contact-form">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">您的姓名</label>
+                        <input type="text" id="name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">电子邮箱</label>
+                        <input type="email" id="email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">联系电话</label>
+                        <input type="tel" id="phone" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">主题</label>
+                        <select id="subject" class="form-control" required>
+                            <option value="">请选择...</option>
+                            <option value="product">产品咨询</option>
+                            <option value="cooperation">商务合作</option>
+                            <option value="support">技术支持</option>
+                            <option value="other">其他</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">留言内容</label>
+                        <textarea id="message" class="form-control" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">发送消息</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- 地图 -->
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3411.716058335616!2d121.5881233155939!3d31.2048449814725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzHCsDEyJzE3LjQiTiAxMjHCsDM1JzIyLjgiRQ!5e0!3m2!1szh-CN!2sus!4v1620000000000!5m2!1szh-CN!2sus" 
+                    allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </div>
+
+    <script>
+        // 表单提交处理
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // 这里可以添加表单验证和AJAX提交逻辑
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value
+            };
+            
+            console.log('表单已提交:', formData);
+            
+            // 模拟提交成功
+            alert('感谢您的留言！我们会尽快与您联系。');
+            this.reset();
+        });
+    </script>
+</body>
+</html>

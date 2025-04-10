@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>核心团队 - 筱荷科技</title>
+    <style>
+        /* 全局样式（与主页保持一致） */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
+        }
+        body {
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* 导航栏 */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #0066cc;
+        }
+        .logo span {
+            color: #333;
+        }
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        .nav-links li {
+            margin-left: 30px;
+        }
+        .nav-links a {
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: #0066cc;
+        }
+        
+        /* 团队页面专属样式 */
+        .team-header {
+            background: linear-gradient(135deg, #0066cc, #00aaff);
+            color: white;
+            padding: 150px 0 80px;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .team-header h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+        .team-section {
+            padding: 50px 0 80px;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .section-title h2 {
+            font-size: 36px;
+            color: #0066cc;
+            margin-bottom: 15px;
+        }
+        
+        /* 团队成员网格布局 */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        .team-member {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .team-member:hover {
+            transform: translateY(-10px);
+        }
+        .member-img {
+            height: 300px;
+            background-color: #eee;
+            background-size: cover;
+            background-position: center;
+        }
+        .member-info {
+            padding: 25px;
+            text-align: center;
+        }
+        .member-info h3 {
+            font-size: 22px;
+            margin-bottom: 5px;
+        }
+        .member-position {
+            color: #0066cc;
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: block;
+        }
+        .member-bio {
+            color: #666;
+            font-size: 15px;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .team-header h1 { font-size: 32px; }
+            .nav-links { display: none; }
+            .team-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header>
+        <div class="container">
+            <nav>
+                筱荷<span>科技</span>
+                <ul class="nav-links">
+                     <li><a href="首页.html">首页</a> <!--点击跳转到新页面--></li>  
+		      <li><a href="关于我们.html">关于我们</a> <!--点击跳转到新页面--></li>
+                    <li><a href="核心团队.html">核心团队</a> <!--点击跳转到新页面--></li>
+                    <li><a href="产品服务.html">产品服务</a> <!--点击跳转到新页面--></li>
+                    <li><a href="联系我们.html">联系我们</a> <!--点击跳转到新页面--></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 团队页头部 -->
+    <div class="team-header">
+        <div class="container">
+            <h1>我们的核心团队</h1>
+            <p>由行业资深专家、顶尖工程师和优秀管理者组成</p >
+        </div>
+    </div>
+
+    <!-- 团队成员展示 -->
+    <div class="container">
+        <section class="team-section">
+            <div class="section-title">
+                <h2>管理团队</h2>
+            </div>
+            <div class="team-grid">
+                <!-- 成员1 -->
+                <div class="team-member">
+                    <div class="member-img" style="background-image: url('https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80');"></div>
+                    <div class="member-info">
+                        <h3>吕成</h3>
+                        <span class="member-position">创始人 & CEO</span>
+                        <p class="member-bio">前AI领域独角兽公司技术总监，拥有10年人工智能行业经验，带领筱荷科技完成三轮融资。</p >
+                    </div>
+                </div>
+                
+                <!-- 成员2 -->
+                <div class="team-member">
+                    <div class="member-img" style="background-image: url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80');"></div>
+                    <div class="member-info">
+                        <h3>苏琳</h3>
+                        <span class="member-position">前端设计师</span>
+                        <p class="member-bio">大数据与云计算专家，主导过3个国家级科技项目，拥有20项技术专利。</p >
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="team-section">
+            <div class="section-title">
+                <h2>技术团队</h2>
+            </div>
+            <div class="team-grid">
+                <!-- 成员3 -->
+                <div class="team-member">
+                    <div class="member-img" style="background-image: url('https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80');"></div>
+                    <div class="member-info">
+                        <h3>彭道圣</h3>
+                        <span class="member-position">后端工程师</span>
+                        <p class="member-bio">机器学习博士，在NeurIPS/CVPR等顶会发表论文20+篇，算法落地10+行业。</p >
+                    </div>
+                </div>
+                
+                <!-- 成员4 -->
+                <div class="team-member">
+                    <div class="member-img" style="background-image: url('https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80');"></div>
+                    <div class="member-info">
+                        <h3>杨晨</h3>
+                        <span class="member-position">销售</span>
+                        <p class="member-bio">主导设计过3款千万级用户产品，擅长将技术转化为商业价值。</p >
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

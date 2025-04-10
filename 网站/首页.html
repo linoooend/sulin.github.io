@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>筱荷科技 - 创新科技，智领未来</title>
+    <style>
+        /* 全局样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
+        }
+        
+        body {
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        a {
+            text-decoration: none;
+            color: #0066cc;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* 导航栏 */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #0066cc;
+        }
+        
+        .logo span {
+            color: #333;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #0066cc;
+        }
+        
+        /* 英雄区域 */
+        .hero {
+            background: linear-gradient(135deg, #0066cc, #00aaff);
+            color: white;
+            padding: 150px 0 100px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: white;
+            color: #0066cc;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* 关于我们 */
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            color: #0066cc;
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* 团队 */
+        .team {
+            background-color: #f9f9f9;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .team-member {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-10px);
+        }
+        
+        .member-img {
+            height: 250px;
+            background-color: #eee;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .member-info {
+            padding: 20px;
+        }
+        
+        .member-info h3 {
+            margin-bottom: 5px;
+        }
+        
+        .member-info p.position {
+            color: #0066cc;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+        
+        /* 产品 */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .product-card {
+            border: 1px solid #eee;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+        
+        .product-card:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .product-img {
+            height: 200px;
+            background-color: #f5f5f5;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .product-info {
+            padding: 20px;
+        }
+        
+        .product-info h3 {
+            margin-bottom: 10px;
+        }
+        
+        /* 联系方式 */
+        .contact {
+            background-color: #f9f9f9;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .contact-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+        
+        .contact-icon {
+            font-size: 40px;
+            color: #0066cc;
+            margin-bottom: 20px;
+        }
+        
+        /* 页脚 */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-col h3 {
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-col ul li a {
+            color: #ccc;
+            transition: color 0.3s;
+        }
+        
+        .footer-col ul li a:hover {
+            color: white;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            color: #aaa;
+            font-size: 14px;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">筱荷<span>科技</span></div>
+                <ul class="nav-links">
+                    <li><a href="首页.html">首页</a> <!--点击跳转到新页面--></li>  
+		      <li><a href="关于我们.html">关于我们</a> <!--点击跳转到新页面--></li>
+                    <li><a href="核心团队.html">核心团队</a> <!--点击跳转到新页面--></li>
+                    <li><a href="产品服务.html">产品服务</a> <!--点击跳转到新页面--></li>
+                    <li><a href="联系我们.html">联系我们</a> <!--点击跳转到新页面--></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 英雄区域 -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>创新科技，智领未来</h1>
+            <p>筱荷科技致力于人工智能、大数据分析与物联网解决方案，为客户提供高效、智能的数字化服务</p >
+            <a href="联系我们.html">联系我们</a> <!--点击跳转到新页面-->
+        </div>
+    </section>
+
+    <!-- 关于我们 -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>关于筱荷科技</h2>
+            </div>
+            <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+                <p>筱荷科技（Xiaohe Technology）成立于2025年，总部位于成都市高新技术产业园区。公司拥有一支由行业资深专家、顶尖工程师组成的团队，具备丰富的技术积累和实战经验。</p >
+                <p>我们的使命是通过技术创新帮助企业和组织实现数字化转型，提升运营效率，创造更大价值。</p >
+            </div>
+        </div>
+    </section>
+
+    <!-- 核心团队 -->
+    <section class="section team" id="team">
+        <div class="container">
+            <div class="section-title">
+                <h2>核心团队</h2>
+                <p>我们的团队由行业资深专家、顶尖工程师和优秀管理者组成</p >
+            </div>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-img" style="background-image: url('https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80');"></div>
+                    <div class="member-info">
+                        <h3>吕成</h3>
+                        <p class="position">创始人 & CEO</p >
+                        <p>前AI领域独角兽公司技术总监，10年人工智能行业经验</p >
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-img" style="background-image: url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80');"></div>
+                    <div class="member-info">
+                        <h3>苏琳</h3>
+                        <p class="position">前端设计师</p >
+                        <p>大数据与云计算专家，主导多个国家级科技项目</p >
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-img" style="background-image: url('https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80');"></div>
+                    <div class="member-info">
+                        <h3>彭道圣</h3>
+                        <p class="position">后端工程师</p >
+                        <p>机器学习博士，发表国际顶会论文20+篇</p >
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-img" style="background-image: url('https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80');"></div>
+                    <div class="member-info">
+                        <h3>杨晨</h3>
+                        <p class="position">销售</p >
+                        <p>资深产品经理，主导多款千万级用户产品设计</p >
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 产品服务 -->
+    <section class="section" id="products">
+        <div class="container">
+            <div class="section-title">
+                <h2>产品与服务</h2>
+                <p>我们提供全方位的技术解决方案，助力企业数字化转型</p >
+            </div>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-img" style="background-image: url('https://via.placeholder.com/600x400');"></div>
+                    <div class="product-info">
+                        <h3>人工智能解决方案</h3>
+                        <p>包括智能客服系统、计算机视觉平台等，应用于安防、医疗影像分析等领域</p >
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img" style="background-image: url('https://via.placeholder.com/600x400');"></div>
+                    <div class="product-info">
+                        <h3>大数据分析</h3>
+                        <p>企业数据中台、行业洞察报告，整合多源数据，助力精准决策</p >
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img" style="background-image: url('https://via.placeholder.com/600x400');"></div>
+                    <div class="product-info">
+                        <h3>物联网应用</h3>
+                        <p>智慧城市系统、工业物联网，实现设备远程监控与预测性维护</p >
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系方式 -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>联系我们</h2>
+                <p>我们期待与您合作，共创美好未来</p >
+            </div>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">📞</div>
+                    <h3>电话</h3>
+                    <p>155-2814-1315</p >
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">✉️</div>
+                    <h3>邮箱</h3>
+                    <p>3127567685@.com</p >
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">🏢</div>
+                    <h3>办公地点</h3>
+                    <p>成都市金堂县白果街道瑞江路111号</p >
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>筱荷科技</h3>
+                    <p>创新科技，智领未来</p >
+                </div>
+                <div class="footer-col">
+                    <h3>快速链接</h3>
+                    <ul>
+                         <li><a href="首页.html">首页</a> <!--点击跳转到新页面--></li>  
+		      <li><a href="关于我们.html">关于我们</a> <!--点击跳转到新页面--></li>
+                    <li><a href="核心团队.html">核心团队</a> <!--点击跳转到新页面--></li>
+                    <li><a href="产品服务.html">产品服务</a> <!--点击跳转到新页面--></li>
+                    <li><a href="联系我们.html">联系我们</a> <!--点击跳转到新页面--></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>联系方式</h3>
+                    <ul>
+                        <li>电话: 155-2814-1315</li>
+                        <li>邮箱: 3127567685@.com</li>
+                        <li>地址: 成都市金堂县白果街道瑞江路111号</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2023 筱荷科技 版权所有</p >
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>产品服务 - 筱荷科技</title>
+    <style>
+        /* 全局样式（与主页保持一致） */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
+        }
+        body {
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* 导航栏 */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #0066cc;
+        }
+        .logo span {
+            color: #333;
+        }
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        .nav-links li {
+            margin-left: 30px;
+        }
+        .nav-links a {
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: #0066cc;
+        }
+        
+        /* 产品页专属样式 */
+        .products-hero {
+            background: linear-gradient(135deg, #0066cc, #00aaff);
+            color: white;
+            padding: 150px 0 80px;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .products-hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+        .products-hero p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 18px;
+        }
+        
+        /* 产品分类标签 */
+        .product-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        .tab-btn {
+            padding: 10px 25px;
+            margin: 0 10px;
+            background: transparent;
+            border: 2px solid #0066cc;
+            color: #0066cc;
+            border-radius: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .tab-btn.active,
+        .tab-btn:hover {
+            background: #0066cc;
+            color: white;
+        }
+        
+        /* 产品展示区 */
+        .product-section {
+            padding: 60px 0;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .section-title h2 {
+            font-size: 36px;
+            color: #0066cc;
+            margin-bottom: 15px;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        .product-card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            background: white;
+        }
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+        .product-img {
+            height: 220px;
+            background-color: #f5f5f5;
+            background-size: cover;
+            background-position: center;
+        }
+        .product-content {
+            padding: 25px;
+        }
+        .product-content h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #0066cc;
+        }
+        .product-tag {
+            display: inline-block;
+            background: #e6f2ff;
+            color: #0066cc;
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            margin-bottom: 15px;
+        }
+        .product-desc {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .product-link {
+            display: inline-block;
+            color: #0066cc;
+            font-weight: bold;
+            border-bottom: 2px solid #0066cc;
+            padding-bottom: 3px;
+        }
+        
+        /* 解决方案专区 */
+        .solution-banner {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            margin: 60px 0;
+            border-radius: 10px;
+        }
+        .solution-banner h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        .solution-banner p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        .btn-white {
+            display: inline-block;
+            background: white;
+            color: #0066cc;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        .btn-white:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .products-hero h1 { font-size: 32px; }
+            .nav-links { display: none; }
+            .product-grid { grid-template-columns: 1fr; }
+            .tab-btn { margin: 5px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header>
+        <div class="container">
+            <nav>
+                筱荷<span>科技</span>
+                <ul class="nav-links">
+                     <li><a href="首页.html">首页</a> <!--点击跳转到新页面--></li>  
+		      <li><a href="关于我们.html">关于我们</a> <!--点击跳转到新页面--></li>
+                    <li><a href="核心团队.html">核心团队</a> <!--点击跳转到新页面--></li>
+                    <li><a href="产品服务.html">产品服务</a> <!--点击跳转到新页面--></li>
+                    <li><a href="联系我们.html">联系我们</a> <!--点击跳转到新页面--></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 产品页头部 -->
+    <div class="products-hero">
+        <div class="container">
+            <h1>我们的产品与服务</h1>
+            <p>基于人工智能、大数据和物联网技术的全方位解决方案，助力企业数字化转型</p >
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- 产品分类标签 -->
+        <div class="product-tabs">
+            <button class="tab-btn active" data-category="all">全部产品</button>
+            <button class="tab-btn" data-category="ai">人工智能</button>
+            <button class="tab-btn" data-category="bigdata">大数据</button>
+            <button class="tab-btn" data-category="iot">物联网</button>
+        </div>
+
+        <!-- 人工智能产品 -->
+        <section class="product-section">
+            <div class="section-title">
+                <h2>人工智能解决方案</h2>
+                <p>将前沿AI技术转化为实际业务价值</p >
+            </div>
+            <div class="product-grid">
+                <!-- 产品1 -->
+                <div class="product-card" data-category="ai">
+                    <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1677442135136-760c813a743d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="product-content">
+                        <span class="product-tag">AI+客服</span>
+                        <h3>智能客服系统</h3>
+                        <p class="product-desc">基于自然语言处理的24/7智能客服，可降低80%人工客服成本，支持多轮对话和情绪识别。</p >
+                        了解详情 →
+                    </div>
+                </div>
+                
+                <!-- 产品2 -->
+                <div class="product-card" data-category="ai">
+                    <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1610563166150-b34df4f3bcd6?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="product-content">
+                        <span class="product-tag">计算机视觉</span>
+                        <h3>工业质检平台</h3>
+                        <p class="product-desc">基于深度学习的视觉检测系统，识别准确率99.7%，已应用于电子制造、汽车零部件等行业。</p >
+                        查看案例 →
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 大数据产品 -->
+        <section class="product-section">
+            <div class="section-title">
+                <h2>大数据分析平台</h2>
+                <p>从数据中挖掘商业洞察</p >
+            </div>
+            <div class="product-grid">
+                <!-- 产品3 -->
+                <div class="product-card" data-category="bigdata">
+                    <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="product-content">
+                        <span class="product-tag">数据中台</span>
+                        <h3>企业数据中枢</h3>
+                        <p class="product-desc">一站式数据整合平台，支持多源异构数据接入、清洗和可视化分析，帮助构建数据资产。</p >
+                        技术白皮书 →
+                    </div>
+                </div>
+                
+                <!-- 产品4 -->
+                <div class="product-card" data-category="bigdata">
+                    <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="product-content">
+                        <span class="product-tag">商业智能</span>
+                        <h3>行业洞察系统</h3>
+                        <p class="product-desc">基于海量行业数据的趋势分析平台，覆盖零售、金融、医疗等15个垂直领域。</p >
+                        免费试用 →
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 物联网产品 -->
+        <section class="product-section">
+            <div class="section-title">
+                <h2>物联网应用</h2>
+                <p>连接物理世界与数字世界</p >
+            </div>
+            <div class="product-grid">
+                <!-- 产品5 -->
+                <div class="product-card" data-category="iot">
+                    <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="product-content">
+                        <span class="product-tag">智慧城市</span>
+                        <h3>城市大脑平台</h3>
+                        <p class="product-desc">整合交通、安防、环保等城市运行数据，实现智能化管理和应急响应。</p >
+                        政府版方案 →
+                    </div>
+                </div>
+                
+                <!-- 产品6 -->
+                <div class="product-card" data-category="iot">
+                    <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="product-content">
+                        <span class="product-tag">工业4.0</span>
+                        <h3>设备预测性维护</h3>
+                        <p class="product-desc">通过传感器数据实时监测设备状态，提前预警故障，降低停机时间30%以上。</p >
+                        行业报告 →
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 定制解决方案 -->
+        <div class="solution-banner">
+            <h2>需要定制化解决方案？</h2>
+            <p>我们为各行业提供量身定制的技术方案，已有50+成功案例</p >
+            咨询专属顾问
+        </div>
+    </div>
+
+    <script>
+        // 简单的产品分类筛选功能
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // 更新标签状态
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                
+                const category = this.dataset.category;
+                const products = document.querySelectorAll('.product-card');
+                
+                products.forEach(product => {
+                    if (category === 'all' || product.dataset.category === category) {
+                        product.style.display = 'block';
+                    } else {
+                        product.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
